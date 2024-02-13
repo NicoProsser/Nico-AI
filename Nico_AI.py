@@ -1,13 +1,13 @@
 from llama_index import SimpleDirectoryReader, GPTVectorStoreIndex, LLMPredictor, ServiceContext, PromptHelper, StorageContext, load_index_from_storage
 #from langchain.chat_models import ChatOpenAI # -> deprecated
-from langchain_community.chat_models import ChatOpenAI
-#from langchain_openai import ChatOpenAI
+#from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from llama_index.vector_stores.faiss import FaissVectorStore
 import gradio as gr
 import sys
 import os
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"]
 #openai.api_key = os.environ["OPENAI_API_KEY"]
 
 def init_index(directory_path):
@@ -61,7 +61,7 @@ def chatbot(input_text):
     return response.response
 
 # create index
-#init_index(os.path.abspath("docs"))
+#init_index(os.getcwd()+"\\docs")
 init_index("docs")
 
 # create ui interface to interact with gpt-3 model
